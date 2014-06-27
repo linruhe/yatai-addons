@@ -173,7 +173,7 @@
                             <a class="oe_login_manage_db" t-attf-href="/web/database/manager{{ '?debug' if debug else '' }}">Manage Databases</a>
                             <span class="oe_footer_seperator"> | </span>
                         </t>
-                        <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
+                        <a href="http://www.b-honest.com" target="_blank">Ask for <span>help</span></a>
                     </div>
                 </div>
             </t>
