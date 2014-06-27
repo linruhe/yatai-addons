@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_campaign_order_graph" model="ir.ui.view">
+         <field name="name">campaign.order.report.graph</field>
+         <field name="model">campaign.order.report</field>
+         <field name="arch" type="xml">
+             <graph string="Order Analysis" type="pivot" stacked="True">
+                 <field name="nbr" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+    <record id="view_campaign_order_report_search" model="ir.ui.view">
+        <field name="name">campaign.order.report.search</field>
+        <field name="model">campaign.order.report</field>
+        <field name="arch" type="xml">
+            <search string="Member Card Analysis">
+                <filter icon="terp-go-today" string="Today" domain="[('date_order','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>                <separator/>
+                <group expand="1" string="Group By...">
+                    <filter string="Brand" icon="terp-partner"  name="brand" context="{'group_by':'brand'}"/>
+                    
+                    <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_order:day'}" help="Ordered date of the sales order"/>
+                    <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_order:month'}" help="Ordered date of the sales order"/>
+                    <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_order:year'}" help="Ordered date of the sales order"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    
+    <record id="action_campaign_order_report_all" model="ir.actions.act_window">
+        <field name="name">Campaign Order Analysis</field>
+        <field name="res_model">campaign.order.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">graph</field>
+        <field name="search_view_id" ref="view_campaign_order_report_search"/>        
+        <field name="view_id" ref="view_campaign_order_graph"/>
+        <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
+    </record>
+
+    <menuitem id="base.yatai_id_1" name="Analysis" parent="base.menu_reporting" sequence="1" />
+    <menuitem action="action_campaign_order_report_all" id="menu_campaign_order_report_all" parent="base.yatai_id_1" sequence="10"/>
+
+</data>
+</openerp>

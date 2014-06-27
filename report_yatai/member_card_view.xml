@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <record id="member_card_tree_yatai" model="ir.ui.view">
+            <field name="name">member.card.tree.yatai</field>
+            <field name="model">yatai.member.card</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Member Card">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="city"/>
+                    <field name="ref"/>
+                    <field name="mobile"/>
+                    <field name="date_sale"/>
+                    <field name="village"/>
+                    <field name="housenumber"/>
+                    <field name="brand"/>
+                    <field name="team"/>
+                    <field name="saleperson"/>
+                    <field name="checkin"/>
+                </tree>
+            </field>
+        </record>    
+        <record id="action_yatai_card_tree_yatai" model="ir.actions.act_window">
+            <field name="name">Member Card</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">yatai.member.card</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="member_card_tree_yatai"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a Member card in you system.
+              </p><p>
+                Member Card.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="base.yatai_id_100" name="Import" parent="base.menu_reporting" sequence="1" />
+    <menuitem id="menu_member_card_form_yatai_id_1" name="Member Card" parent="base.yatai_id_100" action="action_yatai_card_tree_yatai" sequence="1"/>
+
+</data>
+</openerp>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <record id="campaign_oder_tree_yatai" model="ir.ui.view">
+            <field name="name">campaign.oder.tree_yatai</field>
+            <field name="model">yatai.campaign.order</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Campaign Order">
+                    <field name="brand"/>
+                    <field name="money"/>
+                    <field name="vcard_id"/>
+                    <field name="name"/>
+                    <field name="date_order"/>
+                    <field name="date_import"/>
+                </tree>
+            </field>
+        </record>    
+        <record id="action_campaign_oder_tree_yatai" model="ir.actions.act_window">
+            <field name="name">Campaign Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">yatai.campaign.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="campaign_oder_tree_yatai"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a contact in your address book.
+              </p><p>
+                Campaign Order.
+              </p>
+            </field>
+        </record>
+
+    <menuitem id="menu_partner_form_yatai_id_2" name="Campaign Order" parent="base.yatai_id_100" action="action_campaign_oder_tree_yatai" sequence="1"/>
+
+</data>
+</openerp>
