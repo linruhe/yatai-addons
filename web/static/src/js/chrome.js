@@ -1036,7 +1036,7 @@ instance.web.UserMenu =  instance.web.Widget.extend({
                     state: JSON.stringify(state),
                     scope: 'userinfo',
                 };
-                instance.web.redirect('https://www.b-honest.com/oauth2/auth?'+$.param(params));
+                instance.web.redirect('https://www.odoo.com/oauth2/auth?'+$.param(params));
             });
         }
     },
