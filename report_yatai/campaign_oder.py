@@ -25,7 +25,7 @@ from openerp.tools.translate import _
 class yatai_campaign_order(osv.osv):
     '''campaign order'''
     _name = "yatai.campaign.order"
-    _order = 'date_order'
+    _order = 'date_import desc'
 
     _columns = {
         'name': fields.char('#Receipt', size=64),

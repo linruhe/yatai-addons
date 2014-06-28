@@ -6,7 +6,7 @@
             <field name="model">yatai.campaign.order</field>
             <field eval="8" name="priority"/>
             <field name="arch" type="xml">
-                <tree string="Campaign Order">
+                <tree string="Campaign Order" editable="bottom">
                     <field name="brand"/>
                     <field name="money"/>
                     <field name="vcard_id"/>
@@ -25,7 +25,7 @@
             <field name="view_id" ref="campaign_oder_tree_yatai"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a contact in your address book.
+                Click to add an order in your system.
               </p><p>
                 Campaign Order.
               </p>

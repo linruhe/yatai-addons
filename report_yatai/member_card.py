@@ -25,7 +25,7 @@ from openerp.tools.translate import _
 class yatai_member_card(osv.osv):
     '''Member Card'''
     _name = "yatai.member.card"
-    _order = 'date_sale'
+    _order = 'date_import desc'
     
     def _checkin_rate(self, cursor, user, ids, name, arg, context=None):
         res={}

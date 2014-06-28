@@ -6,7 +6,7 @@
             <field name="model">yatai.member.card</field>
             <field eval="8" name="priority"/>
             <field name="arch" type="xml">
-                <tree string="Member Card">
+                <tree string="Member Card" editable="bottom">
                     <field name="name"/>
                     <field name="state"/>
                     <field name="city"/>
