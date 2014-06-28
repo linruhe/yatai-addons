@@ -81,7 +81,7 @@ msgstr ""
 #: view:member.card.report:0
 #: field:yatai.member.card,brand:0
 msgid "Brand"
-msgstr "定单品牌"
+msgstr "售卡品牌"
 
 #. module: report_yatai
 #: field:yatai.campaign.order,brand:0
