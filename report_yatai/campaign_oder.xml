@@ -6,7 +6,7 @@
             <field name="model">yatai.campaign.order</field>
             <field eval="8" name="priority"/>
             <field name="arch" type="xml">
-                <tree string="Campaign Order" editable="bottom">
+                <tree string="Campaign Order" editable="top">
                     <field name="brand"/>
                     <field name="money"/>
                     <field name="vcard_id"/>
