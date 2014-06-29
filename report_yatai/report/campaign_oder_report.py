@@ -32,7 +32,7 @@ class campaign_order_report(osv.osv):
         'date_order': fields.date('Date Order', readonly=True),
         'nbr': fields.integer('# Total Orders', readonly=True),
         'brand': fields.char(' Brand', size=64, readonly=True),
-        'money': fields.float('Money', digits=(16,2), readonly=True),
+        'money': fields.float('\xe6\x94\xb6\xe6\xac\xbe', digits=(16,2), readonly=True),
     }
     _order = 'date_order desc'
 

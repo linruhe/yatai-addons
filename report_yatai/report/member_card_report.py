@@ -29,14 +29,14 @@ class member_card_report(osv.osv):
     _rec_name = 'date_sale'
 
     _columns = {
-        'date_sale': fields.date('Date Sale', readonly=True),
-        'nbr': fields.integer('# Total Cards', readonly=True),
+        'date_sale': fields.date('\xe5\x94\xae\xe5\x8d\xa1\xe6\x97\xa5\xe6\x9c\x9f', readonly=True),
+        'nbr': fields.integer('\xe5\x94\xae\xe5\x8d\xa1\xe6\x95\xb0', readonly=True),
         'village': fields.char('Village', size=64, readonly=True),
         'brand': fields.char(' Brand', size=64, readonly=True),
         'team': fields.char(' Team', size=64, readonly=True),
         'saleperson': fields.char(' Sale Person', size=64, readonly=True),
-        'checkin': fields.integer('# Check In', readonly=True),
-        'checkin_rate': fields.float('Check IN%', digits=(16,2), readonly=True,group_operator='avg'),
+        'checkin': fields.integer('\xe7\xad\xbe\xe5\x88\xb0\xe6\x95\xb0', readonly=True),
+        'checkin_rate': fields.float('\xe7\xad\xbe\xe5\x88\xb0\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
     }
     _order = 'date_sale desc'
 

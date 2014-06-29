@@ -34,13 +34,12 @@ The Dashboard for the Sales Manager will include
     'author': 'lihaihe',
     'website': 'http://www.b-honest.com',
     'images': [],
-    'depends': ['report'],
+    'depends': [],
     'data': [
-    	 'report/member_card_report .xml',
-    	 'report/campaign_oder_report.xml',
     	 'member_card_view.xml',
     	 'campaign_oder.xml',
-
+    	 'report/member_card_report.xml',
+    	 'report/campaign_oder_report.xml',
     ],
     'demo': [],
     'test': [

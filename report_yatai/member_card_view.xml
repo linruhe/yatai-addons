@@ -38,7 +38,7 @@
             </field>
         </record>
     
-    <menuitem id="base.yatai_id_100" name="Import" parent="base.menu_reporting" sequence="1" />
+    <menuitem id="base.yatai_id_100" name="数据导入" parent="base.menu_reporting" sequence="2" />
     <menuitem id="menu_member_card_form_yatai_id_1" name="Member Card" parent="base.yatai_id_100" action="action_yatai_card_tree_yatai" sequence="1"/>
 
 </data>

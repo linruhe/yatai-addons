@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.saas~5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-28 02:07+0000\n"
-"PO-Revision-Date: 2014-06-28 02:07+0000\n"
+"POT-Creation-Date: 2014-06-29 08:47+0000\n"
+"PO-Revision-Date: 2014-06-29 08:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,16 +32,6 @@ msgid " Team"
 msgstr "渠道"
 
 #. module: report_yatai
-#: field:member.card.report,checkin:0
-msgid "# Check In"
-msgstr "签到"
-
-#. module: report_yatai
-#: field:member.card.report,nbr:0
-msgid "# Total Cards"
-msgstr "售卡总数"
-
-#. module: report_yatai
 #: field:campaign.order.report,nbr:0
 msgid "# Total Orders"
 msgstr "定单总数"
@@ -64,7 +54,12 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "                Member Card.\n"
 "              </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a Member card in you system.\n"
+"              </p><p>\n"
+"                Member Card.\n"
+"              </p>\n"
+"            "
 
 #. module: report_yatai
 #: model:ir.actions.act_window,help:report_yatai.action_campaign_oder_tree_yatai
@@ -74,7 +69,12 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "                Campaign Order.\n"
 "              </p>\n"
 "            "
-msgstr ""
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add an order in your system.\n"
+"              </p><p>\n"
+"                Campaign Order.\n"
+"              </p>\n"
+"            "
 
 #. module: report_yatai
 #: view:campaign.order.report:0
@@ -91,14 +91,14 @@ msgstr "定单品牌"
 #. module: report_yatai
 #: field:yatai.member.card,campaign_order_ids:0
 msgid "Camaign orders"
-msgstr "活动定单"
+msgstr "活动订单"
 
 #. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_campaign_oder_tree_yatai
 #: model:ir.ui.menu,name:report_yatai.menu_partner_form_yatai_id_2
 #: view:yatai.campaign.order:0
 msgid "Campaign Order"
-msgstr "活动定单"
+msgstr "活动订单"
 
 #. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_campaign_order_report_all
@@ -115,11 +115,6 @@ msgstr "订单分析"
 #: view:member.card.report:0
 msgid "Card Sale Analysis"
 msgstr "售卡分析"
-
-#. module: report_yatai
-#: field:member.card.report,checkin_rate:0
-msgid "Check IN%"
-msgstr "签到率(%)"
 
 #. module: report_yatai
 #: field:yatai.member.card,checkin:0
@@ -149,7 +144,6 @@ msgid "Date Order"
 msgstr "下单日期"
 
 #. module: report_yatai
-#: field:member.card.report,date_sale:0
 #: field:yatai.member.card,date_sale:0
 msgid "Date Sale"
 msgstr "售卡日期"
@@ -191,15 +185,9 @@ msgid "Mobile"
 msgstr "电话"
 
 #. module: report_yatai
-#: field:campaign.order.report,money:0
-#: field:yatai.campaign.order,money:0
-msgid "Money"
-msgstr "下订金额"
-
-#. module: report_yatai
 #: field:yatai.member.card,ref:0
 msgid "Name"
-msgstr "V卡"
+msgstr "姓名"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
@@ -234,7 +222,7 @@ msgstr "定单日期"
 #: view:campaign.order.report:0
 #: view:member.card.report:0
 msgid "Orders processed Today or planned for Today"
-msgstr ""
+msgstr "Orders processed Today or planned for Today"
 
 #. module: report_yatai
 #: field:yatai.member.card,saleperson:0
@@ -256,7 +244,7 @@ msgstr "渠道"
 #: model:ir.actions.act_window,help:report_yatai.action_campaign_order_report_all
 #: model:ir.actions.act_window,help:report_yatai.action_member_card_report_all
 msgid "This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application."
-msgstr ""
+msgstr "This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application."
 
 #. module: report_yatai
 #: view:campaign.order.report:0
@@ -278,7 +266,12 @@ msgstr "VIP卡"
 #: sql_constraint:yatai.campaign.order:0
 #: sql_constraint:yatai.member.card:0
 msgid "You can not have two id with the same order !"
-msgstr ""
+msgstr "You can not have two id with the same order !"
+
+#. module: report_yatai
+#: field:yatai.campaign.order,money:0
+msgid "money"
+msgstr "金额"
 
 #. module: report_yatai
 #: view:member.card.report:0
@@ -294,10 +287,35 @@ msgstr "小区"
 #. module: report_yatai
 #: model:ir.model,name:report_yatai.model_yatai_campaign_order
 msgid "yatai.campaign.order"
-msgstr ""
+msgstr "yatai.campaign.order"
 
 #. module: report_yatai
 #: model:ir.model,name:report_yatai.model_yatai_member_card
 msgid "yatai.member.card"
-msgstr ""
+msgstr "yatai.member.card"
+
+#. module: report_yatai
+#: field:member.card.report,nbr:0
+msgid "售卡数"
+msgstr "售卡数"
+
+#. module: report_yatai
+#: field:member.card.report,date_sale:0
+msgid "售卡日期"
+msgstr "售卡日期"
+
+#. module: report_yatai
+#: field:campaign.order.report,money:0
+msgid "收款"
+msgstr "收款"
+
+#. module: report_yatai
+#: field:member.card.report,checkin:0
+msgid "签到数"
+msgstr "签到数"
+
+#. module: report_yatai
+#: field:member.card.report,checkin_rate:0
+msgid "签到率(%)"
+msgstr "签到率(%)"
 
