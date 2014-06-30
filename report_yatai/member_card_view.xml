@@ -18,9 +18,7 @@
                     <field name="brand"/>
                     <field name="team"/>
                     <field name="saleperson"/>
-                    <field name="checkin"/>
-                    <field name="card_orders"/>
-                   
+                    <field name="checkin"/>                   
                 </tree>
             </field>
         </record>    

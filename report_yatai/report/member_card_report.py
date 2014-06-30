@@ -63,7 +63,7 @@ class member_card_report(osv.osv):
                     avg(checkin_rate) as checkin_rate,
                     sum(case when card_orders>0 then 1 else 0 end) as card_dealed,
                     sum(card_orders) as card_orders,
-                    (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100 as accurate_rate
+                    (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100.00 as accurate_rate
         """
         return select_str
 
