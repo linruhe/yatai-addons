@@ -29,34 +29,38 @@ class campaign_order_report(osv.osv):
     _rec_name = 'date_order'
 
     _columns = {
-        'date_order': fields.date('Date Order', readonly=True),
+        'date_order': fields.datetime('Date Order', readonly=True),
         'nbr': fields.integer('# Total Orders', readonly=True),
-        'brand': fields.char(' Brand', size=64, readonly=True),
+        'order_brand': fields.char('Order Brand', size=64, readonly=True),
+        'card_brand': fields.char('Card Brand', size=64, readonly=True),
         'money': fields.float('\xe6\x94\xb6\xe6\xac\xbe', digits=(16,2), readonly=True),
     }
     _order = 'date_order desc'
 
     def _select(self):
         select_str = """
-             SELECT id as id ,
+             SELECT c.id as id ,
                     c.date_order as date_order,
                     count(*) as nbr,
-                    c.brand as brand,
-                    sum(c.money) as money
+                    c.brand as order_brand,
+                    sum(c.money) as money,
+                    p.brand as card_brand
         """
         return select_str
 
     def _from(self):
         from_str = """
                yatai_campaign_order c
+                  left join yatai_member_card p  on (c.vcard_id=p.id)
         """
         return from_str
 
     def _group_by(self):
         group_by_str = """ GROUP BY
-                id,
+                c.id,
                 c.brand,
-                c.date_order    
+                c.date_order, 
+                p.brand
         """
         return group_by_str
 

@@ -32,11 +32,18 @@ class member_card_report(osv.osv):
         'date_sale': fields.date('\xe5\x94\xae\xe5\x8d\xa1\xe6\x97\xa5\xe6\x9c\x9f', readonly=True),
         'nbr': fields.integer('\xe5\x94\xae\xe5\x8d\xa1\xe6\x95\xb0', readonly=True),
         'village': fields.char('Village', size=64, readonly=True),
-        'brand': fields.char(' Brand', size=64, readonly=True),
-        'team': fields.char(' Team', size=64, readonly=True),
+        'brand': fields.char('Brand', size=64, readonly=True),
+        'team': fields.char('Team', size=64, readonly=True),
+        'city': fields.char('city', size=64, readonly=True),
+        'state': fields.char('state', size=64, readonly=True),        
         'saleperson': fields.char(' Sale Person', size=64, readonly=True),
         'checkin': fields.integer('\xe7\xad\xbe\xe5\x88\xb0\xe6\x95\xb0', readonly=True),
         'checkin_rate': fields.float('\xe7\xad\xbe\xe5\x88\xb0\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
+        'card_dealed': fields.integer('\xe7\xad\xbe\xe5\x8d\x95\xe6\x88\xb7',  readonly=True),
+        'card_orders': fields.integer('\xe7\xad\xbe\xe5\x8d\x95\xe6\x95\xb0',  readonly=True),
+        'accurate_rate': fields.float('\xe7\xb2\xbe\xe5\x87\x86\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
+                
+
     }
     _order = 'date_sale desc'
 
@@ -46,13 +53,17 @@ class member_card_report(osv.osv):
                     count(*) as nbr,
                     id as id,
                     p.city as city,
+                    p.state as state,
                     p.name as name,
                     p.village as village,
                     p.brand as brand,
                     p.team as team,
                     p.saleperson as saleperson,
                     sum(case when checkin=True then 1 else 0 end) as checkin,
-                    avg(checkin_rate) as checkin_rate
+                    avg(checkin_rate) as checkin_rate,
+                    sum(case when card_orders>0 then 1 else 0 end) as card_dealed,
+                    sum(card_orders) as card_orders,
+                    (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100 as accurate_rate
         """
         return select_str
 
@@ -67,6 +78,8 @@ class member_card_report(osv.osv):
                 id,
                 p.team,
                 p.brand,
+                p.city,
+                p.state,
                 p.saleperson,
                 p.date_sale,
                 p.village         

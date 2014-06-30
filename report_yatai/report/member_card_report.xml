@@ -23,7 +23,8 @@
                     <filter string="Team" icon="terp-partner"  name="Team" context="{'group_by':'team'}"/>
                     <filter string="Brand" icon="terp-partner"  name="brand" context="{'group_by':'brand'}"/>
                     <filter string="village" icon="terp-partner"  name="village" context="{'group_by':'village'}"/>
-                    
+                    <filter string="city" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
+                    <filter string="state" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>                    
                     <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_sale:day'}" help="Ordered date of the sales order"/>
                     <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_sale:month'}" help="Ordered date of the sales order"/>
                     <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_sale:year'}" help="Ordered date of the sales order"/>

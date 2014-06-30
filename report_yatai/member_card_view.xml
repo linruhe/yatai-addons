@@ -19,6 +19,8 @@
                     <field name="team"/>
                     <field name="saleperson"/>
                     <field name="checkin"/>
+                    <field name="card_orders"/>
+                   
                 </tree>
             </field>
         </record>    

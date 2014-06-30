@@ -36,6 +36,27 @@ class yatai_member_card(osv.osv):
                 res[partner.id]=0.00        
         return res
 
+    def _card_orders_total(self, cursor, user, ids, name, arg, context=None):
+        res={}
+        for partner in self.browse(cursor, user, ids, context=context):
+            if partner.campaign_order_ids:
+                orders_total = 0
+                for order_id in partner.campaign_order_ids :
+                    orders_total=orders_total+order_id.money
+                res[partner.id]=orders_total
+            else :
+                res[partner.id]=0.00        
+        return res
+    
+    def _card_orders(self, cursor, user, ids, name, arg, context=None):
+        res={}
+        for partner in self.browse(cursor, user, ids, context=context):
+            if partner.campaign_order_ids:
+                res[partner.id]=len(partner.campaign_order_ids)
+            else :
+                res[partner.id]=0.00        
+        return res
+
     _columns = {
         'name': fields.char('#Vip Card', size=64),
         'state': fields.char('State', size=64),
@@ -45,13 +66,17 @@ class yatai_member_card(osv.osv):
         'date_sale': fields.date('Date Sale'),
         'village': fields.char('village', size=64),
         'housenumber': fields.char('House Number', size=64),
-        'brand': fields.char('Brand', size=64),        
+        'brand': fields.char('Brand', size=64),
+#        'card_brand': fields.char('Card Brand', size=64),                      
         'team': fields.char('Team', size=64),
         'saleperson': fields.char('Sale Person', size=64,),
         'checkin': fields.boolean('CheckIn'),
         'campaign_order_ids': fields.one2many('yatai.campaign.order', 'vcard_id', 'Camaign orders'),
         'checkin_rate': fields.function(_checkin_rate, string='Checkin Ratio', type='float',digits=(16,2),store=True),
         'date_import': fields.datetime('Date Import'),
+        'card_orders': fields.function(_card_orders, string='Card Orders', type='float',digits=(16,2),store=True),
+        'card_orders_total': fields.function(_card_orders_total, string='Card Orders', type='float',digits=(16,2),store=True),
+
 
     }
     _sql_constraints = [

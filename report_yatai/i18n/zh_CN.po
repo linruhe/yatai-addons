@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.saas~5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-29 08:47+0000\n"
-"PO-Revision-Date: 2014-06-29 08:47+0000\n"
+"POT-Creation-Date: 2014-06-30 08:45+0000\n"
+"PO-Revision-Date: 2014-06-30 08:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: report_yatai
-#: field:campaign.order.report,brand:0
-#: field:member.card.report,brand:0
-msgid " Brand"
-msgstr "售卡品牌"
-
-#. module: report_yatai
 #: field:member.card.report,saleperson:0
 msgid " Sale Person"
 msgstr "销售员"
-
-#. module: report_yatai
-#: field:member.card.report,team:0
-msgid " Team"
-msgstr "渠道"
 
 #. module: report_yatai
 #: field:campaign.order.report,nbr:0
@@ -77,8 +66,8 @@ msgstr "<p class=\"oe_view_nocontent_create\">\n"
 "            "
 
 #. module: report_yatai
-#: view:campaign.order.report:0
 #: view:member.card.report:0
+#: field:member.card.report,brand:0
 #: field:yatai.member.card,brand:0
 msgid "Brand"
 msgstr "售卡品牌"
@@ -110,6 +99,18 @@ msgstr "订单分析"
 #: model:ir.model,name:report_yatai.model_campaign_order_report
 msgid "Campaign order Statistics"
 msgstr "订单分析"
+
+#. module: report_yatai
+#: view:campaign.order.report:0
+#: field:campaign.order.report,card_brand:0
+msgid "Card Brand"
+msgstr "Card Brand"
+
+#. module: report_yatai
+#: field:yatai.member.card,card_orders:0
+#: field:yatai.member.card,card_orders_total:0
+msgid "Card Orders"
+msgstr "Card Orders"
 
 #. module: report_yatai
 #: view:member.card.report:0
@@ -196,6 +197,12 @@ msgstr "订单分析"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
+#: field:campaign.order.report,order_brand:0
+msgid "Order Brand"
+msgstr "Order Brand"
+
+#. module: report_yatai
+#: view:campaign.order.report:0
 #: view:member.card.report:0
 msgid "Order Date (day)"
 msgstr "定单日期(天)"
@@ -236,6 +243,7 @@ msgstr "省"
 
 #. module: report_yatai
 #: view:member.card.report:0
+#: field:member.card.report,team:0
 #: field:yatai.member.card,team:0
 msgid "Team"
 msgstr "渠道"
@@ -269,6 +277,12 @@ msgid "You can not have two id with the same order !"
 msgstr "You can not have two id with the same order !"
 
 #. module: report_yatai
+#: view:member.card.report:0
+#: field:member.card.report,city:0
+msgid "city"
+msgstr "城市"
+
+#. module: report_yatai
 #: field:yatai.campaign.order,money:0
 msgid "money"
 msgstr "金额"
@@ -277,6 +291,12 @@ msgstr "金额"
 #: view:member.card.report:0
 msgid "saleperson"
 msgstr "销售员"
+
+#. module: report_yatai
+#: view:member.card.report:0
+#: field:member.card.report,state:0
+msgid "state"
+msgstr "省份"
 
 #. module: report_yatai
 #: view:member.card.report:0
@@ -318,4 +338,19 @@ msgstr "签到数"
 #: field:member.card.report,checkin_rate:0
 msgid "签到率(%)"
 msgstr "签到率(%)"
+
+#. module: report_yatai
+#: field:member.card.report,card_dealed:0
+msgid "签单户"
+msgstr "签单户"
+
+#. module: report_yatai
+#: field:member.card.report,card_orders:0
+msgid "签单数"
+msgstr "签单数"
+
+#. module: report_yatai
+#: field:member.card.report,accurate_rate:0
+msgid "精准率(%)"
+msgstr "精准率(%)"
 
