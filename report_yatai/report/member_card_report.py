@@ -30,18 +30,21 @@ class member_card_report(osv.osv):
 
     _columns = {
         'date_sale': fields.date('\xe5\x94\xae\xe5\x8d\xa1\xe6\x97\xa5\xe6\x9c\x9f', readonly=True),
-        'nbr': fields.integer('\xe5\x94\xae\xe5\x8d\xa1\xe6\x95\xb0', readonly=True),
         'village': fields.char('Village', size=64, readonly=True),
         'brand': fields.char('Brand', size=64, readonly=True),
+        'name': fields.char('Vip Card', size=64, readonly=True),
         'team': fields.char('Team', size=64, readonly=True),
         'city': fields.char('city', size=64, readonly=True),
         'state': fields.char('state', size=64, readonly=True),        
         'saleperson': fields.char(' Sale Person', size=64, readonly=True),
+        'nbr': fields.integer('\xe5\x94\xae\xe5\x8d\xa1\xe6\x95\xb0', readonly=True),
         'checkin': fields.integer('\xe7\xad\xbe\xe5\x88\xb0\xe6\x95\xb0', readonly=True),
         'checkin_rate': fields.float('\xe7\xad\xbe\xe5\x88\xb0\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
         'card_dealed': fields.integer('\xe7\xad\xbe\xe5\x8d\x95\xe6\x88\xb7',  readonly=True),
-        'card_orders': fields.integer('\xe7\xad\xbe\xe5\x8d\x95\xe6\x95\xb0',  readonly=True),
+        'card_orders': fields.integer('\xe4\xb8\x8b\xe5\xae\x9a\xe5\x8d\x95\xe6\x95\xb0',  readonly=True),
         'accurate_rate': fields.float('\xe7\xb2\xbe\xe5\x87\x86\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
+        'card_brand_orders': fields.integer('\xe8\x87\xaa\xe7\xad\xbe\xe5\x8d\x95',  readonly=True),
+        'orders_per_card_dealed': fields.float('\xe5\x9d\x87\xe5\x8d\x95', digits=(16,2), readonly=True,group_operator='avg'),
                 
 
     }
@@ -50,7 +53,6 @@ class member_card_report(osv.osv):
     def _select(self):
         select_str = """
              SELECT p.date_sale as date_sale,
-                    count(*) as nbr,
                     id as id,
                     p.city as city,
                     p.state as state,
@@ -59,17 +61,20 @@ class member_card_report(osv.osv):
                     p.brand as brand,
                     p.team as team,
                     p.saleperson as saleperson,
-                    sum(case when checkin=True then 1 else 0 end) as checkin,
-                    avg(checkin_rate) as checkin_rate,
+                    count(p.name) as nbr,
+                    sum(case when p.checkin=True then 1 else 0 end) as checkin,
+                    sum(case when p.checkin=True then 1 else 0 end)/count(p.name)*100.00 as checkin_rate,
                     sum(case when card_orders>0 then 1 else 0 end) as card_dealed,
                     sum(card_orders) as card_orders,
-                    (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100.00 as accurate_rate
+                    (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100.00 as accurate_rate,
+                    sum(p.card_brand_orders) as card_brand_orders,
+                    (case when sum(card_orders)=0 then 0 else sum(case when card_orders>0 then 1 else 0 end)/sum(card_orders)*100.00 end) as orders_per_card_dealed
         """
         return select_str
 
     def _from(self):
         from_str = """
-               yatai_member_card p
+               yatai_member_card p where p.name is not null
         """
         return from_str
 

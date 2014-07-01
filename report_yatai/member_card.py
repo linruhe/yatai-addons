@@ -56,6 +56,19 @@ class yatai_member_card(osv.osv):
             else :
                 res[partner.id]=0.00        
         return res
+        
+    def _card_brand_orders(self, cursor, user, ids, name, arg, context=None):
+        res={}
+        for partner in self.browse(cursor, user, ids, context=context):
+            if partner.campaign_order_ids:
+                card_brand_orders = 0
+                for order_id in partner.campaign_order_ids :
+                    if order_id.brand == partner.brand :
+                        card_brand_orders = card_brand_orders +1
+                res[partner.id] = card_brand_orders
+            else :
+                res[partner.id]=0.00        
+        return res
 
     _columns = {
         'name': fields.char('#Vip Card', size=64),
@@ -76,6 +89,7 @@ class yatai_member_card(osv.osv):
         'date_import': fields.datetime('Date Import'),
         'card_orders': fields.function(_card_orders, string='Card Orders', type='float',digits=(16,2),store=True),
         'card_orders_total': fields.function(_card_orders_total, string='Card Orders', type='float',digits=(16,2),store=True),
+        'card_brand_orders': fields.function(_card_brand_orders, string='Card Orders', type='float',digits=(16,2),store=True),
 
 
     }
