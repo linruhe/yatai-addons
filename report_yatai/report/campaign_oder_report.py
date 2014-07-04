@@ -30,10 +30,10 @@ class campaign_order_report(osv.osv):
 
     _columns = {
         'date_order': fields.datetime('Date Order', readonly=True),
-        'nbr': fields.integer('# Total Orders', readonly=True),
+        'nbr': fields.integer('\xe8\xae\xa2\xe5\x8d\x95\xe6\x95\xb0\xe9\x87\x8f', readonly=True),
         'order_brand': fields.char('Order Brand', size=64, readonly=True),
         'card_brand': fields.char('Card Brand', size=64, readonly=True),
-        'money': fields.float('\xe6\x94\xb6\xe6\xac\xbe', digits=(16,2), readonly=True),
+        'money': fields.float('\xe4\xb8\x8b\xe8\xae\xa2\xe9\x87\x91\xe9\xa2\x9d', digits=(16,2), readonly=True),
     }
     _order = 'date_order desc'
 

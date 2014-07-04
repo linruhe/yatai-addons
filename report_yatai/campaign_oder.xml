@@ -32,7 +32,7 @@
             </field>
         </record>
 
-    <menuitem id="menu_partner_form_yatai_id_2" name="Campaign Order" parent="base.yatai_id_100" action="action_campaign_oder_tree_yatai" sequence="1"/>
+    <menuitem id="menu_partner_form_yatai_id_2" name="Campaign Order" parent="base.yatai_id_101" action="action_campaign_oder_tree_yatai" sequence="1"/>
 
 </data>
 </openerp>

@@ -80,21 +80,21 @@ class yatai_member_card(osv.osv):
         'village': fields.char('village', size=64),
         'housenumber': fields.char('House Number', size=64),
         'brand': fields.char('Brand', size=64),
-#        'card_brand': fields.char('Card Brand', size=64),                      
         'team': fields.char('Team', size=64),
         'saleperson': fields.char('Sale Person', size=64,),
         'checkin': fields.boolean('CheckIn'),
         'campaign_order_ids': fields.one2many('yatai.campaign.order', 'vcard_id', 'Camaign orders'),
-        'checkin_rate': fields.function(_checkin_rate, string='Checkin Ratio', type='float',digits=(16,2),store=True),
         'date_import': fields.datetime('Date Import'),
-        'card_orders': fields.function(_card_orders, string='Card Orders', type='float',digits=(16,2),store=True),
-        'card_orders_total': fields.function(_card_orders_total, string='Card Orders', type='float',digits=(16,2),store=True),
-        'card_brand_orders': fields.function(_card_brand_orders, string='Card Orders', type='float',digits=(16,2),store=True),
-
+        #'card_orders': fields.function(_card_orders, string='Card Orders', type='integer',store=True),
+        'card_orders': fields.integer('Card Orders'),
+        #'card_orders_total': fields.function(_card_orders_total, string='Card Orders Total', type='float',digits=(16,2),store=True),
+        'card_orders_total': fields.float('Card Orders total',digits=(16,2)),
+        #'card_brand_orders': fields.function(_card_brand_orders, string='Card Brand Orders', type='integer',store=True),
+        'card_brand_orders': fields.integer('Card Brand Orders'),
 
     }
     _sql_constraints = [
-        ('name_key', 'UNIQUE (name)',  'You can not have two id with the same order !')
+        ('name_key', 'UNIQUE (name)',  'You can not have two id with the same VCard !')
     ]
 
     _defaults = {

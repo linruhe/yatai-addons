@@ -44,6 +44,7 @@ class member_card_report(osv.osv):
         'card_orders': fields.integer('\xe4\xb8\x8b\xe5\xae\x9a\xe5\x8d\x95\xe6\x95\xb0',  readonly=True),
         'accurate_rate': fields.float('\xe7\xb2\xbe\xe5\x87\x86\xe7\x8e\x87(%)', digits=(16,2), readonly=True,group_operator='avg'),
         'card_brand_orders': fields.integer('\xe8\x87\xaa\xe7\xad\xbe\xe5\x8d\x95',  readonly=True),
+        'card_ontribution_orders': fields.integer('\xe8\xb4\xa1\xe7\x8c\xae\xe5\x8d\x95',  readonly=True),
         'orders_per_card_dealed': fields.float('\xe5\x9d\x87\xe5\x8d\x95', digits=(16,2), readonly=True,group_operator='avg'),
                 
 
@@ -68,7 +69,8 @@ class member_card_report(osv.osv):
                     sum(card_orders) as card_orders,
                     (sum(case when card_orders>0 then 1 else 0 end)/count(*))*100.00 as accurate_rate,
                     sum(p.card_brand_orders) as card_brand_orders,
-                    (case when sum(card_orders)=0 then 0 else sum(case when card_orders>0 then 1 else 0 end)/sum(card_orders)*100.00 end) as orders_per_card_dealed
+                    sum(card_orders)-sum(p.card_brand_orders) as card_ontribution_orders,
+                    (case when sum(case when card_orders>0 then 1 else 0 end)= 0 then null else sum(card_orders)/sum(case when card_orders>0 then 1.00 else 0 end) end) as orders_per_card_dealed
         """
         return select_str
 
