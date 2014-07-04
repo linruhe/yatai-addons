@@ -36,7 +36,7 @@
                     <filter string="village" icon="terp-partner"  name="village" context="{'group_by':'village'}"/>
                     <filter string="city" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
                     <filter string="state" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>
-                    <filter string="Order Import (day)" icon="terp-go-today" name="date_import" context="{'group_by':'date_import:day'}" help="Import date of the vip cards"/>
+                    <filter string="Date Import (day)" icon="terp-go-today" name="date_import" context="{'group_by':'date_import:day'}" help="Import date of the vip cards"/>
                     <filter string="Import User" icon="terp-partner"  name="import_user" context="{'group_by':'user_id'}"/>
                 </group>
             </search>
