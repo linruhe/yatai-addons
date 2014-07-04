@@ -173,7 +173,7 @@
                             <a class="oe_login_manage_db" t-attf-href="/web/database/manager{{ '?debug' if debug else '' }}">管理数据库</a>
                             <span class="oe_footer_seperator"> | </span>
                         </t>
-                        <a href="mailto:linruhe@hotmail.com" target="_blank">反馈<span>问题</span></a>
+                        <a href="http://www.yonyou.com" target="_blank">反馈<span>问题</span></a>
                     </div>
                 </div>
             </t>
