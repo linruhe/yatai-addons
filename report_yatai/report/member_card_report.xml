@@ -29,7 +29,7 @@
              <graph string="品牌售卡汇总表" type="pivot" stacked="False">
              	   <field name="team" type="row"/>
              	   <field name="brand" type="row"/>
-                 <field name="date_sale" interval="day" type="col"/>
+                 <field name="date_sale" interval="month" type="col"/>
                  <field name="nbr" type="measure"/>
              </graph>
          </field>
@@ -41,7 +41,7 @@
          <field name="arch" type="xml">
              <graph string="个人售卡汇总表" type="pivot" stacked="False">
              	   <field name="saleperson" type="row"/>
-                 <field name="date_sale" interval="day" type="col"/>
+                 <field name="date_sale" interval="month" type="col"/>
                  <field name="nbr" type="measure"/>
              </graph>
          </field>
@@ -125,6 +125,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_member_card_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
@@ -135,6 +136,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_brand_sale_card_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
@@ -145,6 +147,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_brand_sale_card_total_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
@@ -154,6 +157,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_person_sale_card_total_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
@@ -163,6 +167,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_brand_total_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
@@ -173,6 +178,7 @@
         <field name="res_model">member.card.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">graph</field>
+        <field name="context">{'search_default_sale_date_year':'1'}</field>
         <field name="search_view_id" ref="view_member_card_report_search"/>        
         <field name="view_id" ref="view_village_report_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>

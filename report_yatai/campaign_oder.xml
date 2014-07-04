@@ -16,12 +16,29 @@
                 </tree>
             </field>
         </record>    
+        
+    <record id="view_campaign_order_import_search" model="ir.ui.view">
+        <field name="name">campaign.order.import.search</field>
+        <field name="model">yatai.campaign.order</field>
+        <field name="arch" type="xml">
+            <search string="Member Card Analysis">
+                <filter icon="terp-go-today" string="Today" name="today" domain="[('date_import','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_import','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <separator/>
+                <group expand="1" string="Group By...">
+                    <filter string="Brand" icon="terp-partner"  name="brand" context="{'group_by':'brand'}"/>
+                    <filter string="Order Import (day)" icon="terp-go-today" name="date_import" context="{'group_by':'date_import:day'}" help="Import date of the vip cards"/>
+                </group>
+            </search>
+        </field>
+    </record>        
         <record id="action_campaign_oder_tree_yatai" model="ir.actions.act_window">
             <field name="name">Campaign Order</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">yatai.campaign.order</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'search_default_date_import':1}</field>
+            <field name="search_view_id" ref="view_campaign_order_import_search"/>             
             <field name="view_id" ref="campaign_oder_tree_yatai"/>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
