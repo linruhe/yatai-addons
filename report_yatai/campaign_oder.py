@@ -34,6 +34,7 @@ class yatai_campaign_order(osv.osv):
         'vcard_id': fields.many2one('yatai.member.card', 'Vip Card', select=True),
         'date_order': fields.datetime('Date Order'),
         'date_import': fields.datetime('Date Import'),
+        'user_id': fields.many2one('res.users', 'Import User', select=True, track_visibility='onchange'),
 
     }
     _sql_constraints = [
@@ -42,4 +43,5 @@ class yatai_campaign_order(osv.osv):
 
     _defaults = {
         'date_import': fields.datetime.now,
+        'user_id': lambda obj, cr, uid, context: uid,
     }

@@ -71,7 +71,7 @@ class yatai_member_card(osv.osv):
         return res
 
     _columns = {
-        'name': fields.char('#Vip Card', size=64),
+        'name': fields.char('#Vip Card',select=True,size=64),
         'state': fields.char('State', size=64),
         'city': fields.char('City', size=64),
         'ref': fields.char('Name', size=64),
@@ -91,7 +91,7 @@ class yatai_member_card(osv.osv):
         'card_orders_total': fields.float('Card Orders total',digits=(16,2)),
         #'card_brand_orders': fields.function(_card_brand_orders, string='Card Brand Orders', type='integer',store=True),
         'card_brand_orders': fields.integer('Card Brand Orders'),
-
+        'user_id': fields.many2one('res.users', 'Import User', select=True, track_visibility='onchange'),
     }
     _sql_constraints = [
         ('name_key', 'UNIQUE (name)',  'You can not have two id with the same VCard !')
@@ -99,4 +99,5 @@ class yatai_member_card(osv.osv):
 
     _defaults = {
         'date_import': fields.datetime.now,
+        'user_id': lambda obj, cr, uid, context: uid,
     }
