@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_orders_cards_graph" model="ir.ui.view">
+         <field name="name">orders.cards.report.graph</field>
+         <field name="model">orders.cards.report</field>
+         <field name="arch" type="xml">
+             <graph string="Orders cards" type="line" stacked="True">
+             	   <field name="cat" type="col"/>
+                 <field name="date" interval="day" type="row"/>
+                 <field name="nbr" type="measure"/>
+             </graph>
+         </field>
+    </record>
+
+    <record id="view_orders_cards_report_search" model="ir.ui.view">
+        <field name="name">orders.cards.report.search</field>
+        <field name="model">orders.cards.report</field>
+        <field name="arch" type="xml">
+            <search string="Orders Cards Analysis">
+                <filter icon="terp-go-today" string="本年" name = "date_year" domain="[('date','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <group expand="1" string="Group By...">
+                    <filter string="cat" icon="terp-partner"  name="cat" context="{'group_by':'cat'}"/>
+                    <filter string="Date (day)" icon="terp-go-today" context="{'group_by':'date:day'}" help="Ordered date of the sales order"/>
+                    <filter string="Date (month)" icon="terp-go-today" context="{'group_by':'date:month'}" help="Ordered date of the sales order"/>
+                    <filter string="Date (year)" icon="terp-go-today" context="{'group_by':'date:year'}" help="Ordered date of the sales order"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    
+    <record id="action_orders_cards_report_all" model="ir.actions.act_window">
+        <field name="name">总售卡折线图</field>
+        <field name="res_model">orders.cards.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">graph</field>
+        <field name="context">{'search_default_date_year':'1'}</field>
+        <field name="search_view_id" ref="view_orders_cards_report_search"/>        
+        <field name="view_id" ref="view_orders_cards_graph"/>
+        <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
+    </record>
+
+    <menuitem action="action_orders_cards_report_all" id="menu_orders_cards_report_all" parent="base.yatai_id_1" sequence="9"/>
+</data>
+</openerp>

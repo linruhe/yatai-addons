@@ -40,6 +40,7 @@ The Dashboard for the Sales Manager will include
     	 'campaign_oder.xml',
     	 'report/member_card_report.xml',
     	 'report/campaign_oder_report.xml',
+    	 'report/orders_cards_report.xml',
     ],
     'demo': [],
     'test': [

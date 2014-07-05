@@ -21,4 +21,5 @@
 
 import member_card_report
 import campaign_oder_report
+import orders_cards_report
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
