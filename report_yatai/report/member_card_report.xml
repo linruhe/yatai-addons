@@ -15,7 +15,7 @@
          <field name="name">brand_sale_card_report_graph</field>
          <field name="model">member.card.report</field>
          <field name="arch" type="xml">
-             <graph string="品牌售卡柱状图" type="pivot" stacked="False">
+             <graph string="品牌售卡柱状图" type="bar" stacked="False">
              	   <field name="brand" type="row"/>
                  <field name="nbr" type="measure"/>
              </graph>
