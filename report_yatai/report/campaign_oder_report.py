@@ -33,6 +33,9 @@ class campaign_order_report(osv.osv):
         'nbr': fields.integer('\xe8\xae\xa2\xe5\x8d\x95\xe6\x95\xb0\xe9\x87\x8f', readonly=True),
         'order_brand': fields.char('Order Brand', size=64, readonly=True),
         'card_brand': fields.char('Card Brand', size=64, readonly=True),
+        'state': fields.char('state', size=64, readonly=True), 
+        'user_card_import_id': fields.many2one('res.users', 'Import User', readonly=True),
+        'user_order_import_id': fields.many2one('res.users', 'Import User', readonly=True),
         'money': fields.float('\xe4\xb8\x8b\xe8\xae\xa2\xe9\x87\x91\xe9\xa2\x9d', digits=(16,2), readonly=True),
     }
     _order = 'date_order desc'
@@ -43,7 +46,10 @@ class campaign_order_report(osv.osv):
                     c.date_order as date_order,
                     count(*) as nbr,
                     c.brand as order_brand,
+                    c.user_id as user_order_import_id,
                     sum(c.money) as money,
+                    p.state as state,
+                    p.user_id as user_card_import_id,
                     p.brand as card_brand
         """
         return select_str
@@ -60,7 +66,10 @@ class campaign_order_report(osv.osv):
                 c.id,
                 c.brand,
                 c.date_order, 
-                p.brand
+                p.brand,
+                p.user_id,
+                c.user_id,
+                p.state
         """
         return group_by_str
 

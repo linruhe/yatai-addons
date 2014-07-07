@@ -27,6 +27,7 @@
         <field name="model">yatai.member.card</field>
         <field name="arch" type="xml">
             <search string="Member Card Analysis">
+            	  <field name="name" filter_domain="['|','|',('name','ilike',self),('mobile','=',self),('brand','ilike',self)]"/>
                 <filter icon="terp-go-today" string="Today" name="today" domain="[('date_import','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_import','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
                 <separator/>
                 <group expand="1" string="Group By...">

@@ -71,9 +71,9 @@ class yatai_member_card(osv.osv):
         return res
 
     _columns = {
-        'name': fields.char('#Vip Card',select=True,size=64),
-        'state': fields.char('State', size=64),
-        'city': fields.char('City', size=64),
+        'name': fields.char('#Vip Card',size=64, select=True),
+        'state': fields.char('State', size=64, select=True),
+        'city': fields.char('City', size=64, select=True),
         'ref': fields.char('Name', size=64),
         'mobile': fields.char('Mobile', size=64),
         'date_sale': fields.date('Date Sale'),
