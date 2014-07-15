@@ -30,6 +30,7 @@ class yatai_campaign_order(osv.osv):
     _columns = {
         'name': fields.char('#Receipt', size=64),
         'brand': fields.char('Brand Ordered', size=64),
+        'campaign': fields.char('Campaign', size=64),
         'money': fields.float('money', digits=(16,2)),  
         'vcard_id': fields.many2one('yatai.member.card', 'Vip Card', select=True),
         'date_order': fields.datetime('Date Order'),

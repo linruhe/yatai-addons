@@ -110,7 +110,7 @@
                     <filter string="village" icon="terp-partner"  name="village" context="{'group_by':'village'}"/>
                     <filter string="city" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
                     <filter string="state" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>
-                    <filter string="name" icon="terp-partner"  name="name" context="{'group_by':'name'}"/>                    
+                    <filter string="campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>                    
                     <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_sale:day'}" help="Ordered date of the sales order"/>
                     <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_sale:month'}" help="Ordered date of the sales order"/>
                     <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_sale:year'}" help="Ordered date of the sales order"/>

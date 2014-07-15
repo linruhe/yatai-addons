@@ -18,6 +18,7 @@
                     <field name="brand"/>
                     <field name="team"/>
                     <field name="saleperson"/>
+                    <field name="campaign"/>
                     <field name="checkin"/>                   
                 </tree>
             </field>
@@ -34,6 +35,7 @@
                     <filter string="saleperson" icon="terp-partner"  name="salperson" context="{'group_by':'saleperson'}"/>
                     <filter string="Team" icon="terp-partner"  name="Team" context="{'group_by':'team'}"/>
                     <filter string="Brand" icon="terp-partner"  name="brand" context="{'group_by':'brand'}"/>
+                    <filter string="Campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>
                     <filter string="village" icon="terp-partner"  name="village" context="{'group_by':'village'}"/>
                     <filter string="city" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
                     <filter string="state" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>
@@ -61,6 +63,7 @@
                     <field name="brand"/>
                     <field name="team"/>
                     <field name="saleperson"/>
+                    <field name="campaign"/>
                     <field name="checkin"/>                   
                 </tree>
             </field>

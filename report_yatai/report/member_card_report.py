@@ -47,6 +47,7 @@ class member_card_report(osv.osv):
         'card_brand_orders': fields.integer('\xe8\x87\xaa\xe7\xad\xbe\xe5\x8d\x95',  readonly=True),
         'card_ontribution_orders': fields.integer('\xe8\xb4\xa1\xe7\x8c\xae\xe5\x8d\x95',  readonly=True),
         'orders_per_card_dealed': fields.float('\xe5\x9d\x87\xe5\x8d\x95', digits=(16,2), readonly=True,group_operator='avg'),
+        'campaign': fields.char('Campaign', size=64, readonly=True),
                 
 
     }
@@ -63,6 +64,7 @@ class member_card_report(osv.osv):
                     p.brand as brand,
                     p.team as team,
                     p.saleperson as saleperson,
+                    p.campaign as campaign,
                     p.user_id as user_id,
                     count(p.name) as nbr,
                     sum(case when p.checkin=True then 1 else 0 end) as checkin,
@@ -90,6 +92,7 @@ class member_card_report(osv.osv):
                 p.city,
                 p.state,
                 p.saleperson,
+                p.campaign,
                 p.date_sale,
                 p.village         
         """

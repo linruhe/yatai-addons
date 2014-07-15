@@ -11,6 +11,7 @@
                     <field name="money"/>
                     <field name="vcard_id"/>
                     <field name="name"/>
+                    <field name="campaign"/>
                     <field name="date_order"/>
                     <field name="date_import"/>
                 </tree>
@@ -26,6 +27,7 @@
                 <separator/>
                 <group expand="1" string="Group By...">
                     <filter string="Brand" icon="terp-partner"  name="brand" context="{'group_by':'brand'}"/>
+                    <filter string="Campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>
                     <filter string="Date Import (day)" icon="terp-go-today" name="date_import" context="{'group_by':'date_import:day'}" help="Import date of the vip cards"/>
                     <filter string="Import User" icon="terp-partner"  name="import_user" context="{'group_by':'user_id'}"/>
                 </group>
