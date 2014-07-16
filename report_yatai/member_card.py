@@ -95,7 +95,7 @@ class yatai_member_card(osv.osv):
         'campaign': fields.char('campaign', size=64),
     }
     _sql_constraints = [
-        ('name_key', 'UNIQUE (name)',  'You can not have two id with the same VCard !')
+        ('name_key', 'UNIQUE (name,campaign)',  'You can not have two id with the same VCard and campaign!')
     ]
 
     _defaults = {
