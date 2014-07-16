@@ -7,17 +7,22 @@
             <field eval="8" name="priority"/>
             <field name="arch" type="xml">
                 <tree string="Member Card" editable="top">
+                    <field name="date_sale"/>
                     <field name="name"/>
-                    <field name="state"/>
-                    <field name="city"/>
                     <field name="ref"/>
                     <field name="mobile"/>
-                    <field name="date_sale"/>
                     <field name="village"/>
                     <field name="housenumber"/>
+                    <field name="state"/>
+                    <field name="city"/>
+                    <field name="store"/>
+                    <field name="category"/>
                     <field name="brand"/>
                     <field name="team"/>
                     <field name="saleperson"/>
+                    <field name="area"/>
+                    <field name="progress"/>
+                    <field name="note"/>
                     <field name="campaign"/>
                     <field name="checkin"/>                   
                 </tree>
@@ -52,19 +57,24 @@
             <field eval="8" name="priority"/>
             <field name="arch" type="xml">
                 <tree string="售卡/签到/订单订单导入" editable="top">
-                    <field name="name" />
-                    <field name="state" />
-                    <field name="city"/>
+                    <field name="date_sale"/>
+                    <field name="name"/>
                     <field name="ref"/>
                     <field name="mobile"/>
-                    <field name="date_sale"/>
                     <field name="village"/>
                     <field name="housenumber"/>
+                    <field name="state"/>
+                    <field name="city"/>
+                    <field name="store"/>
+                    <field name="category"/>
                     <field name="brand"/>
                     <field name="team"/>
                     <field name="saleperson"/>
+                    <field name="area"/>
+                    <field name="progress"/>
+                    <field name="note"/>
                     <field name="campaign"/>
-                    <field name="checkin"/>                   
+                    <field name="checkin"/>                    
                 </tree>
             </field>
         </record>            

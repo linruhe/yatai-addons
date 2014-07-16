@@ -93,6 +93,11 @@ class yatai_member_card(osv.osv):
         'card_brand_orders': fields.integer('Card Brand Orders'),
         'user_id': fields.many2one('res.users', 'Import User', select=True, track_visibility='onchange'),
         'campaign': fields.char('campaign', size=64),
+        'store': fields.char('Store', size=64),
+        'area': fields.char('Area', size=64),
+        'note': fields.char('Note', size=128),
+        'category': fields.char('Category', size=128),
+        'progress': fields.char('Progress', size=128),
     }
     _sql_constraints = [
         ('name_key', 'UNIQUE (name,campaign)',  'You can not have two id with the same VCard and campaign!')

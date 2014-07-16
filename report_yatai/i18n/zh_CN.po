@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.saas~5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-30 08:45+0000\n"
-"PO-Revision-Date: 2014-06-30 08:45+0000\n"
+"POT-Creation-Date: 2014-07-16 07:43+0000\n"
+"PO-Revision-Date: 2014-07-16 07:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,6 @@ msgid " Sale Person"
 msgstr "销售员"
 
 #. module: report_yatai
-#: field:campaign.order.report,nbr:0
-msgid "# Total Orders"
-msgstr "定单总数"
-
-#. module: report_yatai
 #: field:yatai.campaign.order,name:0
 msgid "#Receipt"
 msgstr "收据号"
@@ -33,9 +28,10 @@ msgstr "收据号"
 #. module: report_yatai
 #: field:yatai.member.card,name:0
 msgid "#Vip Card"
-msgstr "VIP卡"
+msgstr "采购卡编号"
 
 #. module: report_yatai
+#: model:ir.actions.act_window,help:report_yatai.action_yatai_card_import_tree_yatai
 #: model:ir.actions.act_window,help:report_yatai.action_yatai_card_tree_yatai
 msgid "<p class=\"oe_view_nocontent_create\">\n"
 "                Click to add a Member card in you system.\n"
@@ -44,9 +40,9 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a Member card in you system.\n"
+"                点击增加采购卡信息到系统.\n"
 "              </p><p>\n"
-"                Member Card.\n"
+"                采购卡.\n"
 "              </p>\n"
 "            "
 
@@ -59,15 +55,22 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add an order in your system.\n"
+"                点击增加展会订单到系统.\n"
 "              </p><p>\n"
-"                Campaign Order.\n"
+"                展会订单.\n"
 "              </p>\n"
 "            "
 
 #. module: report_yatai
+#: field:yatai.member.card,area:0
+msgid "Area"
+msgstr "户型/面积"
+
+#. module: report_yatai
 #: view:member.card.report:0
 #: field:member.card.report,brand:0
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
 #: field:yatai.member.card,brand:0
 msgid "Brand"
 msgstr "售卡品牌"
@@ -83,6 +86,14 @@ msgid "Camaign orders"
 msgstr "活动订单"
 
 #. module: report_yatai
+#: field:member.card.report,campaign:0
+#: view:yatai.campaign.order:0
+#: field:yatai.campaign.order,campaign:0
+#: view:yatai.member.card:0
+msgid "Campaign"
+msgstr "活动"
+
+#. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_campaign_oder_tree_yatai
 #: model:ir.ui.menu,name:report_yatai.menu_partner_form_yatai_id_2
 #: view:yatai.campaign.order:0
@@ -91,7 +102,6 @@ msgstr "活动订单"
 
 #. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_campaign_order_report_all
-#: model:ir.ui.menu,name:report_yatai.menu_campaign_order_report_all
 msgid "Campaign Order Analysis"
 msgstr "订单分析"
 
@@ -104,13 +114,22 @@ msgstr "订单分析"
 #: view:campaign.order.report:0
 #: field:campaign.order.report,card_brand:0
 msgid "Card Brand"
-msgstr "Card Brand"
+msgstr "卡品牌"
+
+#. module: report_yatai
+#: field:yatai.member.card,card_brand_orders:0
+msgid "Card Brand Orders"
+msgstr "自签单"
 
 #. module: report_yatai
 #: field:yatai.member.card,card_orders:0
-#: field:yatai.member.card,card_orders_total:0
 msgid "Card Orders"
-msgstr "Card Orders"
+msgstr "订单数"
+
+#. module: report_yatai
+#: field:yatai.member.card,card_orders_total:0
+msgid "Card Orders total"
+msgstr "订单金额"
 
 #. module: report_yatai
 #: view:member.card.report:0
@@ -118,14 +137,19 @@ msgid "Card Sale Analysis"
 msgstr "售卡分析"
 
 #. module: report_yatai
+#: field:orders.cards.report,cat:0
+msgid "Cat"
+msgstr "分类"
+
+#. module: report_yatai
+#: field:yatai.member.card,category:0
+msgid "Category"
+msgstr "品类"
+
+#. module: report_yatai
 #: field:yatai.member.card,checkin:0
 msgid "CheckIn"
 msgstr "签到"
-
-#. module: report_yatai
-#: field:yatai.member.card,checkin_rate:0
-msgid "Checkin Ratio"
-msgstr "签到率"
 
 #. module: report_yatai
 #: field:yatai.member.card,city:0
@@ -133,10 +157,36 @@ msgid "City"
 msgstr "城市"
 
 #. module: report_yatai
+#: field:orders.cards.report,date:0
+msgid "Date"
+msgstr "日期"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Date (day)"
+msgstr "日期 (天)"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Date (month)"
+msgstr "日期 (月)"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Date (year)"
+msgstr "日期 (年)"
+
+#. module: report_yatai
 #: field:yatai.campaign.order,date_import:0
 #: field:yatai.member.card,date_import:0
 msgid "Date Import"
 msgstr "导入日期"
+
+#. module: report_yatai
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
+msgid "Date Import (day)"
+msgstr "导入日期 (天)"
 
 #. module: report_yatai
 #: field:campaign.order.report,date_order:0
@@ -152,6 +202,9 @@ msgstr "售卡日期"
 #. module: report_yatai
 #: view:campaign.order.report:0
 #: view:member.card.report:0
+#: view:orders.cards.report:0
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
 msgid "Group By..."
 msgstr "分组条件..."
 
@@ -159,6 +212,24 @@ msgstr "分组条件..."
 #: field:yatai.member.card,housenumber:0
 msgid "House Number"
 msgstr "门牌号"
+
+#. module: report_yatai
+#: field:campaign.order.report,user_card_import_id:0
+#: field:campaign.order.report,user_order_import_id:0
+#: field:member.card.report,user_id:0
+#: field:orders.cards.report,user_import_id:0
+#: view:yatai.campaign.order:0
+#: field:yatai.campaign.order,user_id:0
+#: view:yatai.member.card:0
+#: field:yatai.member.card,user_id:0
+msgid "Import User"
+msgstr "导入用户"
+
+#. module: report_yatai
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
+msgid "Import date of the vip cards"
+msgstr "导入采购卡信息"
 
 #. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_yatai_card_tree_yatai
@@ -170,8 +241,9 @@ msgstr "VIP卡"
 #. module: report_yatai
 #: view:campaign.order.report:0
 #: model:ir.actions.act_window,name:report_yatai.action_member_card_report_all
-#: model:ir.ui.menu,name:report_yatai.menu_member_card_report_all
 #: view:member.card.report:0
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
 msgid "Member Card Analysis"
 msgstr "售卡分析"
 
@@ -191,6 +263,11 @@ msgid "Name"
 msgstr "姓名"
 
 #. module: report_yatai
+#: field:yatai.member.card,note:0
+msgid "Note"
+msgstr "备注"
+
+#. module: report_yatai
 #: view:campaign.order.report:0
 msgid "Order Analysis"
 msgstr "订单分析"
@@ -199,7 +276,7 @@ msgstr "订单分析"
 #: view:campaign.order.report:0
 #: field:campaign.order.report,order_brand:0
 msgid "Order Brand"
-msgstr "Order Brand"
+msgstr "下单品牌"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
@@ -222,14 +299,38 @@ msgstr "定单日期(年)"
 #. module: report_yatai
 #: view:campaign.order.report:0
 #: view:member.card.report:0
+#: view:orders.cards.report:0
 msgid "Ordered date of the sales order"
 msgstr "定单日期"
 
 #. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Orders Cards Analysis"
+msgstr "订单售卡分析"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Orders cards"
+msgstr "订单总数"
+
+#. module: report_yatai
+#: model:ir.model,name:report_yatai.model_orders_cards_report
+msgid "Orders cards Statistics"
+msgstr "订单分析"
+
+#. module: report_yatai
 #: view:campaign.order.report:0
 #: view:member.card.report:0
+#: view:orders.cards.report:0
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
 msgid "Orders processed Today or planned for Today"
 msgstr "Orders processed Today or planned for Today"
+
+#. module: report_yatai
+#: field:yatai.member.card,progress:0
+msgid "Progress"
+msgstr "装修进度"
 
 #. module: report_yatai
 #: field:yatai.member.card,saleperson:0
@@ -242,21 +343,37 @@ msgid "State"
 msgstr "省"
 
 #. module: report_yatai
+#: field:yatai.member.card,store:0
+msgid "Store"
+msgstr "门店"
+
+#. module: report_yatai
 #: view:member.card.report:0
 #: field:member.card.report,team:0
+#: view:yatai.member.card:0
 #: field:yatai.member.card,team:0
 msgid "Team"
 msgstr "渠道"
 
 #. module: report_yatai
+#: model:ir.actions.act_window,help:report_yatai.action_brand_sale_card_order_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_brand_sale_card_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_brand_sale_card_total_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_brand_total_report_all
 #: model:ir.actions.act_window,help:report_yatai.action_campaign_order_report_all
 #: model:ir.actions.act_window,help:report_yatai.action_member_card_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_orders_cards_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_person_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_person_sale_card_total_report_all
+#: model:ir.actions.act_window,help:report_yatai.action_village_report_all
 msgid "This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application."
 msgstr "This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application."
 
 #. module: report_yatai
 #: view:campaign.order.report:0
 #: view:member.card.report:0
+#: view:yatai.campaign.order:0
+#: view:yatai.member.card:0
 msgid "Today"
 msgstr "今天"
 
@@ -266,19 +383,36 @@ msgid "Village"
 msgstr "小区"
 
 #. module: report_yatai
+#: field:member.card.report,name:0
 #: field:yatai.campaign.order,vcard_id:0
 msgid "Vip Card"
 msgstr "VIP卡"
 
 #. module: report_yatai
-#: sql_constraint:yatai.campaign.order:0
 #: sql_constraint:yatai.member.card:0
+msgid "You can not have two id with the same VCard and campaign!"
+msgstr "活动的采购卡编号重复!"
+
+#. module: report_yatai
+#: sql_constraint:yatai.campaign.order:0
 msgid "You can not have two id with the same order !"
-msgstr "You can not have two id with the same order !"
+msgstr "活动的采购卡编号重复 !"
+
+#. module: report_yatai
+#: view:member.card.report:0
+#: field:yatai.member.card,campaign:0
+msgid "campaign"
+msgstr "活动"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "cat"
+msgstr "类别"
 
 #. module: report_yatai
 #: view:member.card.report:0
 #: field:member.card.report,city:0
+#: view:yatai.member.card:0
 msgid "city"
 msgstr "城市"
 
@@ -288,18 +422,28 @@ msgid "money"
 msgstr "金额"
 
 #. module: report_yatai
+#: field:orders.cards.report,nbr:0
+msgid "nbr"
+msgstr "数量"
+
+#. module: report_yatai
 #: view:member.card.report:0
+#: view:yatai.member.card:0
 msgid "saleperson"
 msgstr "销售员"
 
 #. module: report_yatai
+#: field:campaign.order.report,state:0
 #: view:member.card.report:0
 #: field:member.card.report,state:0
+#: field:orders.cards.report,state:0
+#: view:yatai.member.card:0
 msgid "state"
 msgstr "省份"
 
 #. module: report_yatai
 #: view:member.card.report:0
+#: view:yatai.member.card:0
 #: field:yatai.member.card,village:0
 msgid "village"
 msgstr "小区"
@@ -315,6 +459,72 @@ msgid "yatai.member.card"
 msgstr "yatai.member.card"
 
 #. module: report_yatai
+#: field:member.card.report,card_orders:0
+msgid "下定单数"
+msgstr "下定单数"
+
+#. module: report_yatai
+#: field:campaign.order.report,money:0
+msgid "下订金额"
+msgstr "下订金额"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_person_sale_card_total_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_person_sale_card_total_report_all
+#: view:member.card.report:0
+msgid "个人售卡汇总表"
+msgstr "个人售卡汇总表"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_person_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_person_report_all
+#: view:member.card.report:0
+msgid "个人数据分析"
+msgstr "个人数据分析"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_brand_sale_card_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_brand_sale_card_report_all
+#: view:member.card.report:0
+msgid "品牌售卡柱状图"
+msgstr "品牌售卡柱状图"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_brand_sale_card_total_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_brand_sale_card_total_report_all
+#: view:member.card.report:0
+msgid "品牌售卡汇总表"
+msgstr "品牌售卡汇总表"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_brand_sale_card_order_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_brand_sale_card_order_report_all
+msgid "品牌售卡订单互动表"
+msgstr "品牌售卡订单互动表"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_brand_total_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_brand_total_report_all
+#: view:member.card.report:0
+msgid "品牌总数据分析"
+msgstr "品牌总数据分析"
+
+#. module: report_yatai
+#: model:ir.ui.menu,name:report_yatai.menu_member_card_import_form_yatai_id_1
+msgid "售卡/签到/订单"
+msgstr "售卡/签到/订单"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_yatai_card_import_tree_yatai
+msgid "售卡/签到/订单导入"
+msgstr "售卡/签到/订单导入"
+
+#. module: report_yatai
+#: view:yatai.member.card:0
+msgid "售卡/签到/订单订单导入"
+msgstr "售卡/签到/订单订单导入"
+
+#. module: report_yatai
 #: field:member.card.report,nbr:0
 msgid "售卡数"
 msgstr "售卡数"
@@ -325,9 +535,28 @@ msgid "售卡日期"
 msgstr "售卡日期"
 
 #. module: report_yatai
-#: field:campaign.order.report,money:0
-msgid "收款"
-msgstr "收款"
+#: field:member.card.report,orders_per_card_dealed:0
+msgid "均单"
+msgstr "均单"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_village_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_village_report_all
+#: view:member.card.report:0
+msgid "小区成交率"
+msgstr "小区成交率"
+
+#. module: report_yatai
+#: model:ir.actions.act_window,name:report_yatai.action_orders_cards_report_all
+#: model:ir.ui.menu,name:report_yatai.menu_orders_cards_report_all
+msgid "总售卡折线图"
+msgstr "总售卡折线图"
+
+#. module: report_yatai
+#: view:member.card.report:0
+#: view:orders.cards.report:0
+msgid "本年"
+msgstr "本年"
 
 #. module: report_yatai
 #: field:member.card.report,checkin:0
@@ -345,12 +574,22 @@ msgid "签单户"
 msgstr "签单户"
 
 #. module: report_yatai
-#: field:member.card.report,card_orders:0
-msgid "签单数"
-msgstr "签单数"
-
-#. module: report_yatai
 #: field:member.card.report,accurate_rate:0
 msgid "精准率(%)"
 msgstr "精准率(%)"
+
+#. module: report_yatai
+#: field:member.card.report,card_brand_orders:0
+msgid "自签单"
+msgstr "自签单"
+
+#. module: report_yatai
+#: field:campaign.order.report,nbr:0
+msgid "订单数量"
+msgstr "订单数量"
+
+#. module: report_yatai
+#: field:member.card.report,card_ontribution_orders:0
+msgid "贡献单"
+msgstr "贡献单"
 
