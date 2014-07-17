@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <record id="group_yatai_import" model="res.groups">
+        <field name="name">Manage Date Import</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+     </record>
+</data>
+</openerp>

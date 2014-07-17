@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.saas~5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-16 07:43+0000\n"
-"PO-Revision-Date: 2014-07-16 07:43+0000\n"
+"POT-Creation-Date: 2014-07-17 13:11+0000\n"
+"PO-Revision-Date: 2014-07-17 13:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -157,26 +157,6 @@ msgid "City"
 msgstr "城市"
 
 #. module: report_yatai
-#: field:orders.cards.report,date:0
-msgid "Date"
-msgstr "日期"
-
-#. module: report_yatai
-#: view:orders.cards.report:0
-msgid "Date (day)"
-msgstr "日期 (天)"
-
-#. module: report_yatai
-#: view:orders.cards.report:0
-msgid "Date (month)"
-msgstr "日期 (月)"
-
-#. module: report_yatai
-#: view:orders.cards.report:0
-msgid "Date (year)"
-msgstr "日期 (年)"
-
-#. module: report_yatai
 #: field:yatai.campaign.order,date_import:0
 #: field:yatai.member.card,date_import:0
 msgid "Date Import"
@@ -198,6 +178,16 @@ msgstr "下单日期"
 #: field:yatai.member.card,date_sale:0
 msgid "Date Sale"
 msgstr "售卡日期"
+
+#. module: report_yatai
+#: field:orders.cards.report,date_day:0
+msgid "Date day"
+msgstr "销售日期（天）"
+
+#. module: report_yatai
+#: view:orders.cards.report:0
+msgid "Date(day)"
+msgstr "销售日期（天）"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
@@ -230,6 +220,11 @@ msgstr "导入用户"
 #: view:yatai.member.card:0
 msgid "Import date of the vip cards"
 msgstr "导入采购卡信息"
+
+#. module: report_yatai
+#: model:res.groups,name:report_yatai.group_yatai_import
+msgid "Manage Date Import"
+msgstr "Manage Date Import"
 
 #. module: report_yatai
 #: model:ir.actions.act_window,name:report_yatai.action_yatai_card_tree_yatai
@@ -280,26 +275,21 @@ msgstr "下单品牌"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
-#: view:member.card.report:0
 msgid "Order Date (day)"
 msgstr "定单日期(天)"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
-#: view:member.card.report:0
 msgid "Order Date (month)"
 msgstr "定单日期(月)"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
-#: view:member.card.report:0
 msgid "Order Date (year)"
 msgstr "定单日期(年)"
 
 #. module: report_yatai
 #: view:campaign.order.report:0
-#: view:member.card.report:0
-#: view:orders.cards.report:0
 msgid "Ordered date of the sales order"
 msgstr "定单日期"
 
@@ -331,6 +321,16 @@ msgstr "Orders processed Today or planned for Today"
 #: field:yatai.member.card,progress:0
 msgid "Progress"
 msgstr "装修进度"
+
+#. module: report_yatai
+#: field:member.card.report,date_sale_day:0
+msgid "Sale Date (day)"
+msgstr "售卡日期（天）"
+
+#. module: report_yatai
+#: field:member.card.report,date_sale_month:0
+msgid "Sale Date (month)"
+msgstr "售卡日期（月）"
 
 #. module: report_yatai
 #: field:yatai.member.card,saleperson:0
@@ -415,6 +415,16 @@ msgstr "类别"
 #: view:yatai.member.card:0
 msgid "city"
 msgstr "城市"
+
+#. module: report_yatai
+#: view:member.card.report:0
+msgid "date_sale_day"
+msgstr "售卡日期（天）"
+
+#. module: report_yatai
+#: view:member.card.report:0
+msgid "date_sale_month"
+msgstr "售卡日期（月）"
 
 #. module: report_yatai
 #: field:yatai.campaign.order,money:0

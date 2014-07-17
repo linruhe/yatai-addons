@@ -29,7 +29,7 @@
              <graph string="品牌售卡汇总表" type="pivot" stacked="False">
              	   <field name="team" type="row"/>
              	   <field name="brand" type="row"/>
-                 <field name="date_sale" interval="month" type="col"/>
+                 <field name="date_sale_month" type="col"/>
                  <field name="nbr" type="measure"/>
              </graph>
          </field>
@@ -41,7 +41,7 @@
          <field name="arch" type="xml">
              <graph string="个人售卡汇总表" type="pivot" stacked="False">
              	   <field name="saleperson" type="row"/>
-                 <field name="date_sale" interval="month" type="col"/>
+                 <field name="date_sale_month" type="col"/>
                  <field name="nbr" type="measure"/>
              </graph>
          </field>
@@ -100,8 +100,8 @@
         <field name="model">member.card.report</field>
         <field name="arch" type="xml">
             <search string="Member Card Analysis">
-                <filter icon="terp-go-today" string="Today" domain="[('date_sale','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
-                <filter icon="terp-go-today" string="本年" name = "sale_date_year" domain="[('date_sale','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="Today" domain="[('date_sale_day','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale_day','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="本年" name = "sale_date_year" domain="[('date_sale_day','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_sale_day','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
                 <separator/>
                 <group expand="1" string="Group By...">
                     <filter string="saleperson" icon="terp-partner"  name="salperson" context="{'group_by':'saleperson'}"/>
@@ -110,10 +110,10 @@
                     <filter string="village" icon="terp-partner"  name="village" context="{'group_by':'village'}"/>
                     <filter string="city" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
                     <filter string="state" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>
-                    <filter string="campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>                    
-                    <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_sale:day'}" help="Ordered date of the sales order"/>
-                    <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_sale:month'}" help="Ordered date of the sales order"/>
-                    <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_sale:year'}" help="Ordered date of the sales order"/>
+                    <filter string="campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>
+                    <filter string="date_sale_day" icon="terp-partner"  name="date_sale_day" context="{'group_by':'date_sale_day'}"/>
+                    <filter string="date_sale_month" icon="terp-partner"  name="date_sale_month" context="{'group_by':'date_sale_month'}"/>                    
+               
                 </group>
             </search>
         </field>

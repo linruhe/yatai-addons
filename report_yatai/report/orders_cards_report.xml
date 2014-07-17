@@ -8,7 +8,7 @@
          <field name="arch" type="xml">
              <graph string="Orders cards" type="line" stacked="True">
              	   <field name="cat" type="col"/>
-                 <field name="date" interval="day" type="row"/>
+                 <field name="date_day" type="row"/>
                  <field name="nbr" type="measure"/>
              </graph>
          </field>
@@ -19,12 +19,10 @@
         <field name="model">orders.cards.report</field>
         <field name="arch" type="xml">
             <search string="Orders Cards Analysis">
-                <filter icon="terp-go-today" string="本年" name = "date_year" domain="[('date','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="本年" name = "date_year" domain="[('date_day','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_day','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
                 <group expand="1" string="Group By...">
                     <filter string="cat" icon="terp-partner"  name="cat" context="{'group_by':'cat'}"/>
-                    <filter string="Date (day)" icon="terp-go-today" context="{'group_by':'date:day'}" help="Ordered date of the sales order"/>
-                    <filter string="Date (month)" icon="terp-go-today" context="{'group_by':'date:month'}" help="Ordered date of the sales order"/>
-                    <filter string="Date (year)" icon="terp-go-today" context="{'group_by':'date:year'}" help="Ordered date of the sales order"/>
+                    <filter string="Date(day)" icon="terp-partner"  name="date_day" context="{'group_by':'date_day'}"/>
                 </group>
             </search>
         </field>

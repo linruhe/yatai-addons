@@ -30,6 +30,8 @@ class member_card_report(osv.osv):
 
     _columns = {
         'date_sale': fields.date('\xe5\x94\xae\xe5\x8d\xa1\xe6\x97\xa5\xe6\x9c\x9f', readonly=True),
+        'date_sale_day': fields.char('Sale Date (day)', size=64, readonly=True),
+        'date_sale_month': fields.char('Sale Date (month)', size=64, readonly=True),
         'village': fields.char('Village', size=64, readonly=True),
         'brand': fields.char('Brand', size=64, readonly=True),
         'name': fields.char('Vip Card', size=64, readonly=True),
@@ -56,6 +58,8 @@ class member_card_report(osv.osv):
     def _select(self):
         select_str = """
              SELECT p.date_sale as date_sale,
+                    to_char(p.date_sale , 'yyyy-mm-dd') as date_sale_day,
+                    to_char(p.date_sale , 'yyyy-mm') as date_sale_month,
                     id as id,
                     p.city as city,
                     p.state as state,

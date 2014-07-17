@@ -35,12 +35,14 @@ The Dashboard for the Sales Manager will include
     'website': 'http://www.b-honest.com',
     'images': [],
     'depends': [],
+    'category': 'Yaitai Report',
     'data': [
     	 'member_card_view.xml',
     	 'campaign_oder.xml',
     	 'report/member_card_report.xml',
     	 'report/campaign_oder_report.xml',
     	 'report/orders_cards_report.xml',
+    	 'security/yatai_security.xml',
     ],
     'demo': [],
     'test': [
