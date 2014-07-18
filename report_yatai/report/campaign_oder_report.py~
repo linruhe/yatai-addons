@@ -71,7 +71,7 @@ class campaign_order_report(osv.osv):
                 p.brand,
                 p.user_id,
                 c.user_id,
-                p.state,
+                p.state
                 c.campaign
         """
         return group_by_str

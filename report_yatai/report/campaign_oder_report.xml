@@ -33,9 +33,6 @@
                 <group expand="1" string="Group By...">
                     <filter string="Order Brand" icon="terp-partner"  name="order_brand" context="{'group_by':'order_brand'}"/>
                     <filter string="Card Brand"  name="card_brand" context="{'group_by':'card_brand'}"/> 
-                    <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_order:day'}" help="Ordered date of the sales order"/>
-                    <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_order:month'}" help="Ordered date of the sales order"/>
-                    <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_order:year'}" help="Ordered date of the sales order"/>
                 </group>
             </search>
         </field>
