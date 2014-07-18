@@ -28,7 +28,8 @@
         <field name="model">campaign.order.report</field>
         <field name="arch" type="xml">
             <search string="Member Card Analysis">
-                <filter icon="terp-go-today" string="Today" domain="[('date_order','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_order','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="Today" domain="[('date_order','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="本年" name = "date_order" domain="[('date_order','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_order','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
                 <separator/>
                 <group expand="1" string="Group By...">
                     <filter string="Order Brand" icon="terp-partner"  name="order_brand" context="{'group_by':'order_brand'}"/>

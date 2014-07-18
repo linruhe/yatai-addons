@@ -100,8 +100,8 @@
         <field name="model">member.card.report</field>
         <field name="arch" type="xml">
             <search string="Member Card Analysis">
-                <filter icon="terp-go-today" string="Today" domain="[('date_sale','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
-                <filter icon="terp-go-today" string="本年" name = "sale_date_year" domain="[('date_sale','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="Today" domain="[('date_sale_day','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale_day','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
+                <filter icon="terp-go-today" string="本年" name = "sale_date_year" domain="[('date_sale_day','&lt;=',time.strftime('%Y-12-31 23:59:59')),('date_sale_day','&gt;=',time.strftime('%Y-01-01 00:00:00'))]" help="Orders processed Today or planned for Today"/>
                 <separator/>
                 <group expand="1" string="Group By...">
                     <filter string="saleperson" icon="terp-partner"  name="salperson" context="{'group_by':'saleperson'}"/>
