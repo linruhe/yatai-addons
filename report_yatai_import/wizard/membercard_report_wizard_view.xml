@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_membercard_import_wizard" model="ir.ui.view">
+            <field name="name">member card import</field>
+            <field name="model">membercard.import.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Choose your date" version="7.0">
+                    <p class="oe_gray" attrs="{'invisible': [('choose_date', '=', False)]}">
+                        请按格式要求的模板汇总各销售员的售卡信息，并导入系统。
+                    </p>
+                    <p class="oe_gray" attrs="{'invisible': [('choose_date', '=', True)]}">
+                        请按格式要求的模板汇总各销售员的售卡信息，并导入系统。
+                    </p>
+                    <group>
+                        <field name="choose_date" string="选择EXCEL文件"/>
+                        <field name="select_excel" attrs="{'invisible': [('choose_date', '=', False)]}" string="文件"/>
+                    </group>
+                    <footer>
+                        <button name="open_table" string="导入" type="object"  class="oe_highlight"  />
+                        or
+                        <button string="取消" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		
+        <record id="action_membercard_import_wizard" model="ir.actions.act_window">
+            <field name="name">售卡信息导入</field>
+            <field name="res_model">membercard.import.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_membercard_import_wizard"/>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="menu_action_membercard_import_wizard" string="产品查询向导" action="action_membercard_import_wizard" parent="base.yatai_id_100" sequence="15"/>
+    </data>
+</openerp>
+

@@ -11,6 +11,18 @@
              </graph>
          </field>
     </record>
+    <record id="view_campaign_order_hzpp_graph" model="ir.ui.view">
+         <field name="name">campaign.order.report.hzpp.graph</field>
+         <field name="model">campaign.order.report</field>
+         <field name="arch" type="xml">
+             <graph string="合作品牌数据报表" type="pivot" stacked="True">
+                 <field name="nbr" type="measure"/>
+                 <field name="money" type="measure"/>
+             </graph>
+         </field>
+    </record>	
+	
+	
     <record id="view_brand_sale_card_order_graph" model="ir.ui.view">
          <field name="name">brand_sale_card.order.report.graph</field>
          <field name="model">campaign.order.report</field>
@@ -28,11 +40,16 @@
         <field name="model">campaign.order.report</field>
         <field name="arch" type="xml">
             <search string="Member Card Analysis">
-                <filter icon="terp-go-today" string="Today" domain="[('date_order','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_order','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>
-                <separator/>
+                <filter icon="terp-go-today" string="Today" domain="[('date_order','&lt;=',time.strftime('%Y-%m-%d 23:59:59')),('date_sale','&gt;=',time.strftime('%Y-%m-%d 00:00:00'))]" help="Orders processed Today or planned for Today"/>                <separator/>
                 <group expand="1" string="Group By...">
                     <filter string="Order Brand" icon="terp-partner"  name="order_brand" context="{'group_by':'order_brand'}"/>
+                    <filter string="State" icon="terp-partner"  name="state" context="{'group_by':'state'}"/>
+                    <filter string="City" icon="terp-partner"  name="city" context="{'group_by':'city'}"/>
+                    <filter string="campaign" icon="terp-partner"  name="campaign" context="{'group_by':'campaign'}"/>
                     <filter string="Card Brand"  name="card_brand" context="{'group_by':'card_brand'}"/> 
+                    <filter string="Order Date (day)" icon="terp-go-today" context="{'group_by':'date_order:day'}" help="Ordered date of the sales order"/>
+                    <filter string="Order Date (month)" icon="terp-go-today" context="{'group_by':'date_order:month'}" help="Ordered date of the sales order"/>
+                    <filter string="Order Date (year)" icon="terp-go-today" context="{'group_by':'date_order:year'}" help="Ordered date of the sales order"/>
                 </group>
             </search>
         </field>
@@ -57,6 +74,17 @@
         <field name="view_id" ref="view_brand_sale_card_order_graph"/>
         <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
     </record>
+    <record id="action_brand_sale_card_order_report_hzpp_all" model="ir.actions.act_window">
+        <field name="name">合作品牌数据报表</field>
+        <field name="res_model">campaign.order.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">graph</field>
+        <field name="search_view_id" ref="view_campaign_order_report_search"/>        
+        <field name="view_id" ref="view_campaign_order_hzpp_graph"/>
+        <field name="help">This report performs analysis on your member card sales. Analysis check your sales revenues and sort it by different group criteria (salesman, team, brand, etc.) Use this report to perform analysis on sales not having invoiced yet. If you want to analyse your turnover, you should use the Invoice Analysis report in the Accounting application.</field>
+    </record>	
+	
+	
 
     <menuitem action="action_brand_sale_card_order_report_all" id="menu_brand_sale_card_order_report_all" parent="base.yatai_id_2" sequence="10"/>
 </data>

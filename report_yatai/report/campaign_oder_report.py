@@ -37,6 +37,7 @@ class campaign_order_report(osv.osv):
         'user_card_import_id': fields.many2one('res.users', 'Import User', readonly=True),
         'user_order_import_id': fields.many2one('res.users', 'Import User', readonly=True),
         'money': fields.float('\xe4\xb8\x8b\xe8\xae\xa2\xe9\x87\x91\xe9\xa2\x9d', digits=(16,2), readonly=True),
+        'city': fields.char('City', size=64, readonly=True),
         'campaign': fields.char('Campaign', size=64, readonly=True),
     }
     _order = 'date_order desc'
@@ -50,9 +51,10 @@ class campaign_order_report(osv.osv):
                     c.user_id as user_order_import_id,
                     sum(c.money) as money,
                     p.state as state,
+                    p.city as city,
+                    p.campaign as campaign,
                     p.user_id as user_card_import_id,
-                    p.brand as card_brand,
-                    c.campaign as campaign
+                    p.brand as card_brand
         """
         return select_str
 
@@ -72,7 +74,8 @@ class campaign_order_report(osv.osv):
                 p.user_id,
                 c.user_id,
                 p.state,
-                c.campaign
+				p.city,
+				p.campaign
         """
         return group_by_str
 
