@@ -12,6 +12,7 @@
              	 <field name="state" type="row"/>
              	 <field name="city" type="row"/>
              	 <field name="campaign" type="row"/>
+             	 <field name="order_brand" type="row"/>				 
              </graph>
          </field>
     </record>	
