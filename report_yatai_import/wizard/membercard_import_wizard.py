@@ -40,7 +40,7 @@ class membercard_import_wizard(osv.osv_memory):
                 if  lin != 0 :
                     val = {
                         "date_sale" : str(datetime.date.fromordinal(693594+int(table.row_values(lin)[0]))),
-                        "name" : int(table.row_values(lin)[1]),
+                        "name" : str(table.row_values(lin)[1]).split(".")[0],
                         "ref" : table.row_values(lin)[2],
                         "mobile" : str(table.row_values(lin)[3]).split(".")[0],
                         "village" : table.row_values(lin)[4],
@@ -59,6 +59,13 @@ class membercard_import_wizard(osv.osv_memory):
                         "date_import" : data['date'],                                                                        
                     }
                     card_id=self.pool.get('yatai.member.card').create(cr, uid,val,context=context)
+                    if card_id :
+                        ext_val = {
+                            "name" : str(table.row_values(lin)[1]).split(".")[0] + table.row_values(lin)[14] ,
+                            "model" : 'yatai.member.card',
+                            "res_id" : card_id,
+                        }
+                        ext_id = self.pool.get('ir.model.data').create(cr, uid,ext_val,context=context)
                                           
         return {
             'domain': "[('date_import', '=', '" + data['date'] + "')]",
